@@ -25,8 +25,7 @@ namespace Kela
 
             Console.WriteLine("Enter configuration file path");
 
-            //string path2 = Console.ReadLine();
-            string path2 = "C:\\Users\\Elad Cohen\\Desktop\\Kela\\Kela\\Kela\\configurationFile.txt";
+            string path2 = Console.ReadLine();
 
             string[] lines = System.IO.File.ReadAllLines(path2);
 
