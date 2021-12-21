@@ -1,0 +1,13 @@
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.csprojAssemblyReference.cache
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.AssemblyInfoInputs.cache
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.AssemblyInfo.cs
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.csproj.CoreCompileInputs.cache
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\bin\Debug\netcoreapp3.1\Kela.exe
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\bin\Debug\netcoreapp3.1\Kela.deps.json
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\bin\Debug\netcoreapp3.1\Kela.runtimeconfig.json
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\bin\Debug\netcoreapp3.1\Kela.runtimeconfig.dev.json
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\bin\Debug\netcoreapp3.1\Kela.dll
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\bin\Debug\netcoreapp3.1\Kela.pdb
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.dll
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.pdb
+C:\Users\Elad Cohen\Desktop\Kela\Kela\Kela\obj\Debug\netcoreapp3.1\Kela.genruntimeconfig.cache
