@@ -21,13 +21,24 @@ namespace Kela
                 new Pattern() { PatternType = PatternType.Extension, Value = "log" }
             };
 
-            Scanner(path, patternsInput);
+            var output = Scanner(path, patternsInput);
 
             Console.WriteLine("Enter configuration file path");
             
             string path2 = Console.ReadLine();
 
-            string[] lines = System.IO.File.ReadAllLines(path);
+            string[] lines = System.IO.File.ReadAllLines(path2);
+
+            List<Pattern> patternsInput2 = new List<Pattern>();
+
+            foreach (string line in lines)
+            {
+                var lineParts = line.Split(',');
+
+                patternsInput2.Add(new Pattern() { PatternType = (PatternType)Enum.Parse(typeof(PatternType), lineParts[0]), Value = lineParts[1] });
+            }
+
+            var output2 = Scanner(path, patternsInput2.ToArray());
         }
 
         public static string Scanner(string directoryPath, Pattern[] patterns)
@@ -37,21 +48,14 @@ namespace Kela
             foreach (string file in GetFiles(directoryPath))
             {
                 FileInfo fileInfo = new FileInfo(file);
-                output = PatternChecker(patterns, output, fileInfo);
-            }
-
-            return output;
-        }
-
-        private static string PatternChecker(Pattern[] patterns, string output, FileInfo fileInfo)
-        {
-            if (patterns.Any(x => (x.PatternType == PatternType.Name && x.Value.Equals(fileInfo.Name)) || 
-                                    (x.PatternType == PatternType.Extension && x.Value.Equals(fileInfo.Extension) ||
-                                    (x.PatternType == PatternType.Size && x.Value.Equals(fileInfo.Length)) )))
-            {
-                var fullNameParts = fileInfo.FullName.Split('\\');
-                var relativePath = $"/{fullNameParts[fullNameParts.Length - 2]}";
-                output += relativePath + ',' + fileInfo.Name.Split('.')[0] + ',' + fileInfo.Extension + ',' + fileInfo.Length + ',';
+                if (patterns.Any(x => (x.PatternType == PatternType.Name && x.Value.Equals(fileInfo.Name)) ||
+                        (x.PatternType == PatternType.Extension && x.Value.Equals(fileInfo.Extension) ||
+                        (x.PatternType == PatternType.Size && x.Value.Equals(fileInfo.Length)))))
+                {
+                    var fullNameParts = fileInfo.FullName.Split('\\');
+                    var relativePath = $"/{fullNameParts[fullNameParts.Length - 2]}";
+                    output += relativePath + ',' + fileInfo.Name.Split('.')[0] + ',' + fileInfo.Extension + ',' + fileInfo.Length + ',';
+                }
             }
 
             return output;
