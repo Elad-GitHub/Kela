@@ -24,8 +24,9 @@ namespace Kela
             var output = Scanner(path, patternsInput);
 
             Console.WriteLine("Enter configuration file path");
-            
-            string path2 = Console.ReadLine();
+
+            //string path2 = Console.ReadLine();
+            string path2 = "C:\\Users\\Elad Cohen\\Desktop\\Kela\\Kela\\Kela\\configurationFile.txt";
 
             string[] lines = System.IO.File.ReadAllLines(path2);
 
@@ -41,6 +42,7 @@ namespace Kela
             var output2 = Scanner(path, patternsInput2.ToArray());
         }
 
+        //Scans for patterns in a given directory
         public static string Scanner(string directoryPath, Pattern[] patterns)
         {
             string output = string.Empty;
@@ -61,6 +63,7 @@ namespace Kela
             return output;
         }
 
+        //Get recursively a given path files
         static IEnumerable<string> GetFiles(string path)
         {
             Queue<string> queue = new Queue<string>();
